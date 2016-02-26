@@ -71,9 +71,14 @@ echo "elasticsearch.url: \"$ELASTICSEARCH_URL\"" >> $KIBANA_DIR/config/kibana.ym
 
 cat $KIBANA_DIR/config/kibana.yml
 
-$KIBANA_DIR/bin/kibana plugin --install kibana-auth-plugin -u https://github.com/hmalphettes/kibana-auth-plugin/archive/master.tar.gz
+#$KIBANA_DIR/bin/kibana plugin --install kibana-auth-plugin -u https://github.com/hmalphettes/kibana-auth-plugin/archive/master.tar.gz
 
-npm i hapi-auth-cookie
+
+
+#status "Downloading and installing node"
+#node_url="http://s3pository.heroku.com/node/v5.6.0/node-v5.6.0-linux-x64.tar.gz"
+#curl $node_url -s -o - | tar xzf - -C $build_dir
+#npm i hapi-auth-cookie
 
 echo "Exporting PATH" | indent
 echo 'export PATH="$PATH:'${KIBANA_DIR##*/}'/bin"' > $INIT_SCRIPT
