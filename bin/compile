@@ -71,5 +71,9 @@ echo "elasticsearch.url: \"$ELASTICSEARCH_URL\"" >> $KIBANA_DIR/config/kibana.ym
 
 cat $KIBANA_DIR/config/kibana.yml
 
+$KIBANA_DIR/bin/kibana plugin --install kibana-auth-plugin -u https://github.com/hmalphettes/kibana-auth-plugin/archive/master.tar.gz
+
+npm i hapi-auth-cookie
+
 echo "Exporting PATH" | indent
 echo 'export PATH="$PATH:'${KIBANA_DIR##*/}'/bin"' > $INIT_SCRIPT
