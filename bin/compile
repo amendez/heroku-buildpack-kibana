@@ -80,6 +80,7 @@ echo "Node downloaded"
 
 chmod +x $KIBANA_DIR/node/bin/*
 
+$KIBANA_DIR/node/bin/npm -v
 $KIBANA_DIR/node/bin/npm i hapi-auth-cookie
 
 
