@@ -69,8 +69,8 @@ $configure $KIBANA_DIR/config/kibana.yml
 
 echo "elasticsearch.url: \"$ELASTICSEARCH_URL\"" >> $KIBANA_DIR/config/kibana.yml
 
-echo "DOWNLOAD_URL: $ENV_DIR/DOWNLOAD_URL";
-echo "ELASTICSEARCH_URL: $ENV_DIR/ELASTICSEARCH_URL";
+echo "DOWNLOAD_URL: $DOWNLOAD_URL";
+echo "ELASTICSEARCH_URL: $ELASTICSEARCH_URL";
 
 #echo "Downloading and installing node"
 #mkdir $KIBANA_DIR/nodee
