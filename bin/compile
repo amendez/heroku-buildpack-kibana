@@ -69,19 +69,17 @@ $configure $KIBANA_DIR/config/kibana.yml
 
 echo "elasticsearch.url: \"$ELASTICSEARCH_URL\"" >> $KIBANA_DIR/config/kibana.yml
 
+echo "Node HAPI module"
+$KIBANA_DIR/node/bin/npm i hapi-auth-cookie
+
 echo "Installing plugin"
 $KIBANA_DIR/bin/kibana plugin --install kibana-auth-plugin -u https://github.com/hmalphettes/kibana-auth-plugin/archive/master.tar.gz
 
 #echo "Downloading and installing node"
 #node_url="http://s3pository.heroku.com/node/v5.6.0/node-v5.6.0-linux-x64.tar.gz"
 #curl $node_url -s -o - | tar xzf - -C $KIBANA_DIR/node
-
-echo "Node downloaded"
-
-chmod +x $KIBANA_DIR/node/bin/*
-
-$KIBANA_DIR/node/bin/npm -v
-$KIBANA_DIR/node/bin/npm i hapi-auth-cookie
+#echo "Node downloaded"
+#chmod +x $KIBANA_DIR/node/bin/*
 
 echo "Exporting PATH" | indent
-echo 'export PATH="$PATH:'${KIBANA_DIR##*/}'/bin"' > $INIT_SCRIPT
+echo 'export PATH="$PATH:'${KIBANA_DIR##*/}'/bin"; export LOCAL_AUTH_LOGINS="admin:password"' > $INIT_SCRIPT
