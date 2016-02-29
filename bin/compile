@@ -79,8 +79,6 @@ curl $node_url -s -o - | tar xzf - -C $KIBANA_DIR/node
 echo "Node downloaded"
 
 chmod +x $KIBANA_DIR/node/bin/*
-PATH=$PATH:$KIBANA_DIR/node/bin
-echo "Node added to path"
 
 $KIBANA_DIR/node/bin/npm i hapi-auth-cookie
 
