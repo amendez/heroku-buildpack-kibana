@@ -81,5 +81,7 @@ echo "elasticsearch.url: \"$ELASTICSEARCH_URL\"" >> $KIBANA_DIR/config/kibana.ym
 #echo "Installing plugin"
 #$KIBANA_DIR/bin/kibana plugin --install kibana-auth-plugin -u https://github.com/hmalphettes/kibana-auth-plugin/archive/master.tar.gz
 
+$KIBANA_DIR/nodee/bin/npm -v
+
 echo "Exporting PATH" | indent
 echo 'export PATH="$PATH:'${KIBANA_DIR##*/}'/bin"; export LOCAL_AUTH_LOGINS="admin:password"' > $INIT_SCRIPT
